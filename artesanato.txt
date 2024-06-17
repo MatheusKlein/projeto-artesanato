@@ -1,0 +1,6 @@
+﻿CORES:
+* Header: #CAD1C9
+* Header text: #50593B
+* Categorias text: #363636
+* Produtos text: #000000
+* Background: #FFFFFF
