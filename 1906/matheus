@@ -1,0 +1,51 @@
+create database MATHEUS;
+use MATHEUS;
+CREATE TABLE tb_usuario (
+    codusuario INT AUTO_INCREMENT,
+    nome VARCHAR (500),
+    telefone INT (10),
+    email VARCHAR (500),
+    senha VARCHAR (500),
+    tipo VARCHAR (500),
+    ativo BOOLEAN,
+    PRIMARY KEY (codusuario));
+
+CREATE TABLE tb_compras (
+    codcompra INT AUTO_INCREMENT,
+    tipoentrega VARCHAR (500),
+    data INT (8),
+    valorentrega INT (500),
+    codusuario_fk INT,
+    PRIMARY KEY (codcompra),
+    FOREIGN KEY (codusuario_fk));
+
+CREATE TABLE tb_produtos (
+    codproduto INT AUTO_INCREMENT,
+    tamanho INT (100),
+    material VARCHAR (500),
+    valor INT (500),
+    ativo BOOLEAN,
+    PRIMARY KEY (codproduto));
+
+CREATE TABLE tb_compra_itens (
+    codcompraitem INT AUTO_INCREMENT,
+    quantidade INT (500),
+    valor INT (500),
+    codproduto_fk INT,
+    codcompra_fk INT,
+    PRIMARY KEY (codcompraitem),
+    FOREIGN KEY (codproduto_fk),
+    FOREIGN KEY (codcompra_fk));
+
+CREATE TABLE tb_enderecos (
+    codenderecos INT AUTO_INCREMENT,
+    cep VARCHAR (500),
+    PRIMARY KEY (codenderecos));
+
+CREATE TABLE tb_cidade (
+    codcidade INT AUTO_INCREMENT,
+    bairro VARCHAR (500),
+    rua VARCHAR (500),
+    numero INT (500),
+    frete VARCHAR (500),
+    PRIMARY KEY (codcidade));
