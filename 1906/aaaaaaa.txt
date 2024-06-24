@@ -1,0 +1,87 @@
+    ~  mysql -u aluno -p                                                                                                                                                ✔ 
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 29
+Server version: 10.11.2-MariaDB Arch Linux
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> use matheus;
+Reading table information for completion of table and column names
+You can turn off this feature to get a quicker startup with -A
+
+Database changed
+MariaDB [matheus]> CREATE TABLE tb_compras (
+    ->     codcompra INT AUTO_INCREMENT,
+    ->     tipoentrega VARCHAR (100),
+    ->     data INT (8),
+    ->     valorentrega INT (100),
+    ->     codusuario_fk INT,
+    ->     PRIMARY KEY (codcompra),
+    ->     FOREIGN KEY (codusuario_fk));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ')' at line 8
+MariaDB [matheus]> CREATE TABLE tb_compras (
+    ->     codcompra INT AUTO_INCREMENT,
+    ->     tipoentrega VARCHAR (100),
+    ->     data INT (8),
+    ->     valorentrega INT (100),
+    ->     codusuario_fk INT,
+    ->     PRIMARY KEY (codcompra),
+    ->     FOREIGN KEY (codusuario_fk) REFERENSES tb_usuario (codusuario));
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'REFERENSES tb_usuario (codusuario))' at line 8
+MariaDB [matheus]> CREATE TABLE tb_compras (
+    ->     codcompra INT AUTO_INCREMENT,
+    ->     tipoentrega VARCHAR (100),
+    ->     data INT (8),
+    ->     valorentrega INT (100),
+    ->     codusuario_fk INT,
+    ->     PRIMARY KEY (codcompra),
+    ->     FOREIGN KEY (codusuario_fk) REFERENCES tb_usuario (codusuario));
+Query OK, 0 rows affected (0,036 sec)
+
+MariaDB [matheus]> CREATE TABLE tb_produtos (
+    ->     codproduto INT AUTO_INCREMENT,
+    ->     tamanho INT (100),
+    ->     material VARCHAR (500),
+    ->     valor INT (500),
+    ->     ativo BOOLEAN,
+    ->     PRIMARY KEY (codproduto));
+ERROR 1439 (42000): Display width out of range for 'valor' (max = 255)
+MariaDB [matheus]> CREATE TABLE tb_produtos (
+    ->     codproduto INT AUTO_INCREMENT,
+    ->     tamanho INT (100),
+    ->     material VARCHAR (100),
+    ->     valor INT (100),
+    ->     ativo BOOLEAN,
+    ->     PRIMARY KEY (codproduto));
+Query OK, 0 rows affected (0,033 sec)
+
+MariaDB [matheus]> CREATE TABLE tb_compra_itens (
+    ->     codcompraitem INT AUTO_INCREMENT,
+    ->     quantidade INT (100),
+    ->     valor INT (100),
+    ->     codproduto_fk INT,
+    ->     codcompra_fk INT,
+    ->     PRIMARY KEY (codcompraitem),
+    ->     FOREIGN KEY (codproduto_fk) REFERENCES tb_produtos (codproduto),
+    ->     FOREIGN KEY (codcompra_fk) REFERENCES tb_compras (codcompra));
+Query OK, 0 rows affected (0,048 sec)
+
+MariaDB [matheus]> CREATE TABLE tb_enderecos (
+    ->     codenderecos INT AUTO_INCREMENT,
+    ->     cep VARCHAR (100),
+    ->     PRIMARY KEY (codenderecos));
+Query OK, 0 rows affected (0,050 sec)
+
+MariaDB [matheus]> CREATE TABLE tb_cidade (
+    ->     codcidade INT AUTO_INCREMENT,
+    ->     bairro VARCHAR (100),
+    ->     rua VARCHAR (100),
+    ->     numero INT (100),
+    ->     frete VARCHAR (100),
+    ->     PRIMARY KEY (codcidade));
+Query OK, 0 rows affected (0,034 sec)
+
+MariaDB [matheus]> 

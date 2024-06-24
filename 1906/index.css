@@ -1,0 +1,88 @@
+header{
+    background-color:#CAD1C9;
+    padding:10px;
+    display: flex;
+}
+#logo{
+    width: 120px;
+    height: 100px;
+    margin-top: 1%;
+}
+h1{
+    color: #50593B;
+    font-size: 25px;
+    margin-top: 40px;
+}
+#busca{
+    color: #888888;
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 200%;
+    border-radius: 3rem;
+    margin-top: 35px;
+    margin-left: 50px;
+}
+#user{
+    width: 40px;
+    height: 40px;
+    margin-top: 36px;
+    margin-left: 500px;
+}
+h2{
+    color: #50593B;
+    font-size: 15px;
+    margin-top: 45px; 
+}
+#coracao{
+    width: 40px;
+    height: 40px;
+    margin-top: 36px;
+    margin-left: 30px;
+}
+#carrinho{
+    width: 40px;
+    height: 40px;
+    margin-top: 36px;
+    margin-left: 30px;
+}
+h3{
+    color: #50593B;
+    font-size: 17px;
+    margin-top: 43px;
+    margin-left: 5px;
+}
+
+.categorias_container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-shadow: rgb(232, 232, 232) 0px 3px;
+}
+
+.categoria.principal {
+    background-color: #E8E8E8;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.categoria {
+    font-family: 'Markazi Text', sans-serif;
+    font-size: 24px;
+    padding: 20px 60px;
+    color: #363636
+}
+#menu{
+    width: 30px;
+    height: 21px;
+    margin-right: 10px;
+}
+.produtos{
+    width: 250px;
+    height: 200px;
+    margin-top: 70px;
+    margin-left: 50px;
+}
+.produto1{
+    font-size: 15px;
+}
